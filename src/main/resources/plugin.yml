@@ -1,0 +1,25 @@
+name: ${project.name}
+version: ${project.version}
+description: ${project.description}
+author: Jerred Shepherd (RiotShielder)
+website: http://shepherdjerred.com/
+
+main: com.shepherdjerred.stgrind.Main
+
+commands:
+    stgrind:
+        description: Handles plugin related functions
+        aliases: [stg]
+
+permissions:
+    stGrind.*:
+        description: Gives access to all plugin functions
+        children:
+            stSkills.admin.*: true
+    stGrind.admin.*:
+        description: Gives access to all admin commands
+        children:
+          stSkills.admin.reload: true
+    stGrind.admin.reload:
+        description: Gives access to /stgrind reload
+        default: OP
